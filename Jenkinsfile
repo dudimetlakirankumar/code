@@ -2,18 +2,17 @@ pipeline {
     agent any
     tools {
         maven 'local_maven'
-        Docker 'docker'
     }    
     stages {
          stage('build') {
              steps {
                  sh 'mvn clean package'
-            }
-        }
-        stage('docker') {
+             }
+         }
+         stage('docker') {
              steps {
                  sh 'docker build -t myimage .'
-            }
-        }
+             }
+         }
     }
 }
