@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         maven 'local_maven'
-        docker 'docker'
+        Docker 'docker'
     }    
     stages {
          stage('build') {
